@@ -11,7 +11,10 @@ read.tables <- function(files.names,...) {
   ldply(files.names,function(fn) data.frame(Filename=fn, read.csv(fn, ...)))
 }
 colors = brewer.pal(n = 9, name = "Paired")
-temp <- list.files(path="G:\\My Drive\\AP CS A\\Unit 07\\Labs\\7.5 Code - Solution\\",pattern="runtimes.csv", recursive=TRUE,full.names = TRUE) %>%
+download.file("https://raw.githubusercontent.com/cmckibben/Lesson7.5-Cpp-Solution/master/runtimes.csv","cruntime.csv")
+download.file("https://raw.githubusercontent.com/cmckibben/Lesson7.5--Python-Solution/master/runtimes.csv","pruntime.csv")
+download.file("https://raw.githubusercontent.com/cmckibben/Lesson7.5--Java-Solution/master/runtimes.csv","jruntime.csv")
+temp <- list.files(path=".",pattern="*.csv", recursive=TRUE,full.names = TRUE) %>%
   lapply(read_csv) %>%
   reduce(full_join,by="Run")
 hist_boxplot(log(temp$'Java Linear Search Sorted'),col=colors[1],main="Linear Search Sorted - Java")
