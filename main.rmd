@@ -1,3 +1,4 @@
+```{r}
 #install.packages("RColorBrewer")
 #install.packages("packHV")
 library("RColorBrewer")
@@ -140,3 +141,4 @@ abline(h=mean(Python.Linear.Search.Unsorted.NoOutliers),col = colors[5],lwd=3)
 lines(Python.Binary.Search.Sorted.NoOutliers, type = "p", col = colors[6])
 abline(h=mean(Python.Binary.Search.Sorted.NoOutliers),col = colors[6],lwd=3)
 legend("right",c("Linear Search Sorted - Python","Linear Search Unsorted - Python","Binary Search Sorted - Python"), lwd=c(5,2), col=c(colors[4],colors[5],colors[6]), pch=c(15,19), y.intersp=1.5)
+```
